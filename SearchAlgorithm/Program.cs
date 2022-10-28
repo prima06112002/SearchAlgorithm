@@ -78,5 +78,34 @@ namespace SearchAlgorithm
 
             } while ((ch == 'y') || (ch == 'Y'));
         }
+        public void LinearSeacrh()
+        {
+            char ch;
+            //search for number comparison
+            int ctr;
+            do
+            {
+                //accept the number to be searched 
+                Console.Write("\nEnter the element you want to search: ");
+                int item = Convert.ToInt32(Console.ReadLine());
+
+                ctr = 0;
+                for (i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + "found st position" + (i + 1).ToString());
+                        break;
+                    }
+                }
+                if (ctr == n)
+                    Console.WriteLine("\n" + item.ToString() + "not found the array");
+                Console.WriteLine("\nNumber of comparison: " + ctr);
+                Console.Write("\nContinue search (y/n):");
+                ch = char.Parse(Console.ReadLine());
+            } while ((ch == 'y') || (ch == 'Y'));
+        }
     }
 }
+
